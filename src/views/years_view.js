@@ -12,7 +12,7 @@ YearsView.prototype.bindEvents = function () {
     this.allData = event.detail;
     // console.log(test = this.allData);
     const prep_years = this.prepareYearDropDown(this.allData);
-    // console.log(prep_years);
+    // console.log(test = prep_years);
     this.populateDropDown(prep_years)
   });
 

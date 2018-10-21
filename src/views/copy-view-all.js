@@ -17,29 +17,17 @@ AllCO2.prototype.bindEvents = function () {
     this.year = event.detail;
     // console.log(test = this.allData);
     const year_array = this.prepYearChart(this.allData, this.year);
-    // console.log(year_array);
-    this.renderChart(year_array, `Carbon Dioxide for Year: ${this.year}`);
+    console.log(year_array);
+    // this.renderChart(year_array, `Carbon Dioxide for Year: ${this.year}`);
   });
 
-  // PubSub.subscribe('DecadesView:decade-selected', (event) => {
-  //   this.dec_string = event.detail;
-  //
-  //   const decade_array = this.prepDecadeChart(this.allData, this.dec_string);
-  //   console.log(decade_array);
-  //   // this.renderChart(decade_array, `Carbon Dioxide for: ${this.dec_string}+0s`);
-  // });
-
 };
-
-// AllCO2.prototype.prepDecadeChart = function () {
-//
-// };
 
 AllCO2.prototype.prepYearChart = function (allData, selectedYear) {
   const year_array = [];
 
   for(let item of allData){
-    if(item[0].getFullYear() == selectedYear){
+    if(item[0].getFullYear() === selectedYear){
       year_array.push(item);
     }
   }
@@ -47,7 +35,7 @@ AllCO2.prototype.prepYearChart = function (allData, selectedYear) {
 };
 
 
-AllCO2.prototype.renderChart = function (rows, chartTitle) {
+AllCO2.prototype.renderChart = function (rows, chartTitle, chartID) {
   //Load the charts library with a callback, need Line package
   this.container.innerHTML = '';
   google.charts.load('current', {'packages':['line']});

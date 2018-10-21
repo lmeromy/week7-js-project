@@ -25,7 +25,7 @@ KeelingCurve.prototype.prepareData = function (mydata) {
   const array_objects = mydata;
   const array_of_arrays = [];
 
-  for(object of array_objects){
+  for(let object of array_objects){
     let new_ppm = Number(object.ppm);
     let new_date = new Date(object.date);
     let newItem = [new_date, new_ppm];
