@@ -1,0 +1,57 @@
+body {
+  font-family: Helvetica, sans-serif;
+  background-image: url('http://eskipaper.com/images/free-dark-clouds-wallpaper-1.jpg')
+}
+
+h1{
+  display: flex;
+  justify-content: center;
+  background: rgba(158, 158, 158, 0.7);
+  margin-left: 10%;
+  margin-right: 10%;
+  padding: 10px;
+}
+
+#viewing-options {
+  display: flex;
+  justify-content: space-around;
+  background: rgba(158, 158, 158, 0.7);
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-bottom: 10px;
+  padding: 8px;
+  font-size: 16px;
+}
+
+#see-full-keeling {
+  font-size: 16px;
+}
+
+
+#see-full-keeling:hover {
+  color: white;
+  background-color: green;
+  font-size: 18px;
+}
+
+#chart-display {
+  display: flex;
+  /* justify-content: center; */
+}
+
+#text {
+  background: rgba(158, 158, 158, 0.8);
+  padding: 10px;
+  margin: 10px;
+  width: 200px;
+}
+
+#chart-all-co2 {
+  margin: 10px;
+}
+
+footer {
+  background: rgba(158, 158, 158, 0.7);
+  padding: 10px;
+  margin: 10px;
+}

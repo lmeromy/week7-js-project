@@ -14,7 +14,11 @@
 
   <h1>60 Years of Atmospheric Carbon Dioxide (CO<sub>2</sub>)</h1>
 
-  <div id="drop-downs">
+  <div id="viewing-options">
+    <label for="see-full-keeling"></label>
+    <input type="submit" id="see-full-keeling" value="View Full CO2 Record"/>
+
+
     <label for="year-dropdown-options">View Atmospheric CO<sub>2</sub> by Year:</label>
     <select id="year-dropdown-options">
       <option selected disabled></option>
@@ -28,9 +32,18 @@
 
 
   <div id="chart-display">
+    <div id="text">
+      <p>What is the Keeling Curve? In 1958, Charles David Keeling began measuring atmospheric CO<sub>2</sub> at the Mauna Loa Observatory in Hawaii.
+        <br/>
+        <br/>
+        It is now the oldest, continuous record of CO<sub>2</sub>, and despite seasonal fluctuation, it shows a clearly increasing trend.
+        </p>
+    </div>
     <div id="chart-all-co2"></div>
     <div id="chart1"></div>
   </div>
+  <footer>API and Information Sources:  https://en.wikipedia.org/wiki/Keeling_Curve, https://carbondoomsday.com/
+</footer>
 
 </body>
 </html>

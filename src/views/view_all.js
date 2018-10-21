@@ -9,7 +9,7 @@ AllCO2.prototype.bindEvents = function () {
   PubSub.subscribe('Keeling:data-loaded', (event) => {
     // console.log(this);
     this.allData = event.detail;
-    this.renderChart(this.allData, 'Atmospheric Carbon Dioxide Full Keeling Record');
+    this.renderChart(this.allData, 'Atmospheric Carbon Dioxide: Keeling Curve 1958 - 2018');
   });
 
   PubSub.subscribe('YearsView:year-selected', (event) => {
@@ -27,13 +27,15 @@ AllCO2.prototype.bindEvents = function () {
   //   const decade_array = this.prepDecadeChart(this.allData, this.dec_string);
   //   console.log(decade_array);
   //   // this.renderChart(decade_array, `Carbon Dioxide for: ${this.dec_string}+0s`);
+  //   // this.renderDecadeCharts(decade_array);
   // });
 
-};
+  const ViewFullKeeling = document.querySelector('#see-full-keeling');
+  ViewFullKeeling.addEventListener('click', (event) => {
+    this.renderChart(this.allData, 'Atmospheric Carbon Dioxide: Keeling Curve 1958 - 2018');
+  });
 
-// AllCO2.prototype.prepDecadeChart = function () {
-//
-// };
+};
 
 AllCO2.prototype.prepYearChart = function (allData, selectedYear) {
   const year_array = [];
@@ -46,6 +48,20 @@ AllCO2.prototype.prepYearChart = function (allData, selectedYear) {
   return year_array;
 };
 
+// NOT READY
+// AllCO2.prototype.prepDecadeChart = function (allData, decadeStr) {
+//   const decade_array = [];
+//   let years_array = [];
+//   let i = 0;
+//   do {
+//     i+=1;
+//     let year = Number(Number(decadeStr)+i)
+//     years_array.push(year)
+//   } while(i<10);
+//   return years_array;
+//
+//   const yearData = this.prepYearChart(allData,)
+// };
 
 AllCO2.prototype.renderChart = function (rows, chartTitle) {
   //Load the charts library with a callback, need Line package
@@ -63,16 +79,15 @@ AllCO2.prototype.renderChart = function (rows, chartTitle) {
         const options = {
           chart: {
             title: chartTitle,
-            subtitle: 'Parts Per Million'
+            subtitle: 'Parts per million'
           },
-          width: 900,
-          height: 500,
-          colors: ['red']
+          width: 800,
+          height: 475,
+          colors: ['blue'],
+          legend: {position: 'none'}
         };
 
         const chart = new google.charts.Line(document.getElementById('chart1'));
-
-
 
         chart.draw(data, options);
       }
